@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@interface PortraitNavigationController : UINavigationController
+
+@end
+
 @interface WebViewController : UIViewController
 @property (nonatomic, retain) UIWebView *webView;
 @end

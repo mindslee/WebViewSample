@@ -8,6 +8,25 @@
 
 #import "WebViewController.h"
 
+@implementation PortraitNavigationController
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+}
+
+@end
+
 @interface WebViewController ()
 
 @end
@@ -21,22 +40,6 @@
         // Custom initialization
     }
     return self;
-}
-
-// for 6.0 이상.
-//- (NSUInteger)supportedInterfaceOrientations
-//{
-//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-//        return UIInterfaceOrientationMaskAllButUpsideDown;
-//    } else {
-//        return UIInterfaceOrientationMaskAll;
-//    }
-//}
-
-// for 6.0 미만
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
 }
 
 static inline UIBarButtonItem *BarButtonSystemItem(UIBarButtonSystemItem systemItem, id target, SEL selector)

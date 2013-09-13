@@ -81,7 +81,7 @@
 //			
 //			[achivementViewController release];
             WebViewController *controller = [[WebViewController alloc] initWithNibName:nil bundle:nil];
-            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+            UINavigationController *nav = [[PortraitNavigationController alloc] initWithRootViewController:controller];
             UINavigationController *rootNav = [(AppController*)[[UIApplication sharedApplication] delegate] navController];
             [rootNav presentViewController:nav animated:YES completion:^{
                 //
